@@ -362,6 +362,21 @@ p {
     .split-text { border-right: none; border-bottom: 2px solid #C9A86A; }
     .about-text { border-bottom: none; }
 }
+.about-habinatin h4 {
+  font-family: Georgia, serif;
+  color: #6d1a24;
+  font-size: 1.3rem;
+  margin: 1.8rem 0 0.6rem;
+}
+
+.about-habinatin .about-tagline {
+  text-align: center;      /* the closing line stands out in the center */
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #6d1a24;
+  margin-top: 2rem;
+}
 
 .page-content {
     padding: clamp(140px, 22vh, 200px) 2rem 4rem;
