@@ -176,6 +176,193 @@ p {
   background-color: #E3A33B;
 }
 
+/* ---------- Featured bags ---------- */
+.section_bags {
+    background: #F8F2E6;
+    padding: 3.5rem clamp(20px, 4vw, 48px) 3rem;
+}
+.section_bags h2,
+.split-section h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 2.6vw, 2rem);
+    letter-spacing: 0.01em;
+    color: #922D1F;
+    margin: 0 0 1.75rem;
+}
+.bag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+.bag-card {
+    background: #FFFBF3;
+    border: 1px solid #E6D3AE;
+    border-radius: 10px;
+    padding: 12px 12px 14px;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+.bag-card:hover {
+    transform: translateY(-4px);
+}
+.bag-photo {
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    border: 1px solid #C9A86A;
+    overflow: hidden;
+    background: #F5E9D3;
+}
+.bag-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    filter: drop-shadow(0 6px 8px rgba(59, 36, 24, 0.18));
+}
+.bag-card h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.1rem;
+    color: #3B2418;
+    margin: 12px 0 4px;
+}
+.bag-card .bag-desc {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #7A6553;
+    margin: 0 0 12px;
+}
+.bag-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bag-region {
+    background: #922D1F;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+.heart {
+    background: none;
+    border: none;
+    color: #922D1F;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline {
+    color: #922D1F;
+    border: 2px solid #922D1F;
+    background: transparent;
+}
+.btn-outline:hover { background: #922D1F; color: #fff; }
+.btn-solid {
+    color: #fff;
+    background: #922D1F;
+    border: 2px solid #922D1F;
+}
+.btn-solid:hover { background: #73231A; }
+
+/* ---------- Two-column sections ---------- */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #F1E7D4;
+    border-top: 2px solid #C9A86A;
+}
+.split-text,
+.split-media {
+    padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 48px);
+}
+.split-text { border-right: 2px solid #C9A86A; }
+.split-media { display: flex; align-items: center; justify-content: center; }
+.split-section h2 { text-align: left; }
+.split-section h2::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 3px;
+    margin-top: 14px;
+    background: #E3A33B;
+}
+
+.region-chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0 0 2rem;
+}
+.chip {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #5A6631;
+    background: #FFFBF3;
+    border: 2px solid #5A6631;
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.chip:hover,
+.chip.is-active {
+    background: #5A6631;
+    color: #fff;
+}
+
+/* map */
+.ph-map {
+    width: auto;
+    max-width: 100%;
+    height: clamp(320px, 42vw, 480px);
+    display: block;
+    /* the map images have a white background; multiply blends it into the section color */
+    mix-blend-mode: multiply;
+}
+
+/* about */
+.about-section { grid-template-columns: 1fr; border-bottom: 2px solid #C9A86A; }
+.about-text { border-right: none; max-width: 820px; }
+.about-text p {
+    text-align: left;
+    color: #3B2418;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+}
+.about-text .btn { margin-top: 0.75rem; }
+
+@media (max-width: 800px) {
+    .split-section { grid-template-columns: 1fr; }
+    .split-text { border-right: none; border-bottom: 2px solid #C9A86A; }
+    .about-text { border-bottom: none; }
+}
+
 .page-content {
     padding: clamp(140px, 22vh, 200px) 2rem 4rem;
     min-height: 60vh;

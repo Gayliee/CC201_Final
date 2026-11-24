@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -33,9 +33,106 @@ body {
     </div>
 </section>
 
-<div class="section_bags" id="bag">
+<section class="section_bags" id="bag">
     <h2>FEATURED BAGS</h2>
-</div>
+
+    <div class="bag-grid">
+        <article class="bag-card">
+            <div class="bag-photo">
+                <img src="images/bag-ilocano-inabel-cutout.png" alt="Black and white plaid Inabel tote bag with leather straps" loading="lazy">
+            </div>
+            <h3>Ilocano Inabel</h3>
+            <p class="bag-desc">Crisp plaid handwoven on traditional wooden looms.</p>
+            <div class="bag-meta">
+                <span class="bag-region">Ilocos Norte</span>
+                <button class="heart" type="button" aria-label="Save Ilocano Inabel" aria-pressed="false">&#9825;</button>
+            </div>
+        </article>
+
+        <article class="bag-card">
+            <div class="bag-photo">
+                <img src="images/bag-igorot-weave-cutout.png" onerror="this.onerror=null; this.src='images/bag-igorot-weave.webp';" alt="Green striped handwoven Igorot bag" loading="lazy">
+            </div>
+            <h3>Igorot Weaving Traditions</h3>
+            <p class="bag-desc">Bold mountain stripes carried from the Cordillera highlands.</p>
+            <div class="bag-meta">
+                <span class="bag-region">Cordillera</span>
+                <button class="heart" type="button" aria-label="Save Igorot weave bag" aria-pressed="false">&#9825;</button>
+            </div>
+        </article>
+
+        <article class="bag-card">
+            <div class="bag-photo">
+                <img src="images/bag-bicolano-abaca-cutout.png" alt="Red striped abaca handbag with wooden bead handles" loading="lazy">
+            </div>
+            <h3>Bicolano Abaca</h3>
+            <p class="bag-desc">Sturdy abaca fiber with hand-strung wooden bead handles.</p>
+            <div class="bag-meta">
+                <span class="bag-region">Bicol</span>
+                <button class="heart" type="button" aria-label="Save Bicolano abaca bag" aria-pressed="false">&#9825;</button>
+            </div>
+        </article>
+    </div>
+
+    <a class="btn btn-outline" href="bag.html">SEE ALL BAGS</a>
+</section>
+
+<section class="split-section" id="region">
+    <div class="split-text">
+        <h2>10 WEAVING REGIONS</h2>
+        <ul class="region-chips">
+            <li><button type="button" class="chip is-active" data-pin="ilocos">Ilocos Norte</button></li>
+            <li><button type="button" class="chip" data-pin="cordillera">Cordillera</button></li>
+            <li><button type="button" class="chip" data-pin="bicol">Bicol</button></li>
+            <li><button type="button" class="chip" data-pin="samar">Samar</button></li>
+            <li><button type="button" class="chip" data-pin="bohol">Bohol</button></li>
+            <li><button type="button" class="chip" data-pin="aklan">Aklan</button></li>
+            <li><button type="button" class="chip" data-pin="iloilo">Iloilo</button></li>
+            <li><button type="button" class="chip" data-pin="cotabato">South Cotabato</button></li>
+            <li><button type="button" class="chip" data-pin="basilan">Basilan</button></li>
+            <li><button type="button" class="chip" data-pin="maguindanao">Maguindanao</button></li>
+        </ul>
+        <a class="btn btn-solid" href="region.html">EXPLORE REGIONS</a>
+    </div>
+
+    <div class="split-media">
+        <img id="regionMap" class="ph-map" src="images/map/ilocos.png" alt="Map of the Philippines with Ilocos Norte pinned">
+    </div>
+</section>
+
+<section class="split-section about-section" id="about">
+    <div class="split-text about-text">
+        <h2>ABOUT HABINATIN</h2>
+        <p>HabiNatin is a promotion site that showcases the local weavers and tells their story, while highlighting the skill they have in making bags made from weaving. This project aims to promote the traditional Filipino craftsmanship by showcasing the locally made products made from weaving.</p>
+        <p>This is targeted towards Filipino locals, tourists and people who are interested in traditional crafts. The intention of this site is to tell people about these products and the people who make them in order to raise awareness and appreciation for Filipino weaving.</p>
+        <a class="btn btn-outline" href="about.html">READ MORE</a>
+    </div>
+</section>
+
+<script>
+    // Region chips: show the map with that region pinned
+    var regionMap = document.getElementById('regionMap');
+    document.querySelectorAll('.chip').forEach(function (chip) {
+        // preload each map so switching is instant
+        new Image().src = 'images/map/' + chip.dataset.pin + '.png';
+        chip.addEventListener('click', function () {
+            var key = chip.dataset.pin;
+            document.querySelectorAll('.chip').forEach(function (el) {
+                el.classList.toggle('is-active', el === chip);
+            });
+            regionMap.src = 'images/map/' + key + '.png';
+            regionMap.alt = 'Map of the Philippines with ' + chip.textContent + ' pinned';
+        });
+    });
+    // Heart buttons: toggle saved state
+    document.querySelectorAll('.heart').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var on = btn.getAttribute('aria-pressed') !== 'true';
+            btn.setAttribute('aria-pressed', on);
+            btn.innerHTML = on ? '&#9829;' : '&#9825;';
+        });
+    });
+</script>
 
 </body>
 </html>
