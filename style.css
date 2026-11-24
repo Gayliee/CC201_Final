@@ -362,24 +362,20 @@ p {
     .split-text { border-right: none; border-bottom: 2px solid #C9A86A; }
     .about-text { border-bottom: none; }
 }
-.about-habinatin {
-  max-width: 800px;      /* keeps lines a readable width */
-  margin: 0 auto;        /* centers the whole block on the page */
-  padding: 1rem 1.5rem;
-}
-
-.about-habinatin h3 {
-  text-align: center;    /* centered heading */
+.about-habinatin h4 {
   font-family: Georgia, serif;
   color: #6d1a24;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  margin: 1.8rem 0 0.6rem;
 }
 
-.about-habinatin p {
-  text-align: justify;   /* both left and right edges line up */
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
+.about-habinatin .about-tagline {
+  text-align: center;      /* the closing line stands out in the center */
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #6d1a24;
+  margin-top: 2rem;
 }
 
 .page-content {
