@@ -110,10 +110,10 @@ body {
 </section>
 
 <script>
-    // Region chips: show the map with that region pinned
+    // region map switch
     var regionMap = document.getElementById('regionMap');
     document.querySelectorAll('.chip').forEach(function (chip) {
-        // preload each map so switching is instant
+        // map switch
         new Image().src = 'images/map/' + chip.dataset.pin + '.png';
         chip.addEventListener('click', function () {
             var key = chip.dataset.pin;
@@ -124,7 +124,7 @@ body {
             regionMap.alt = 'Map of the Philippines with ' + chip.textContent + ' pinned';
         });
     });
-    // Heart buttons: toggle saved state
+    // heart button
     document.querySelectorAll('.heart').forEach(function (btn) {
         btn.addEventListener('click', function () {
             var on = btn.getAttribute('aria-pressed') !== 'true';

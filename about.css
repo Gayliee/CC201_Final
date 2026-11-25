@@ -1,0 +1,126 @@
+/* These earlier experimental rules were never linked to about.html.
+   Keep them inactive so the current page retains its existing appearance. */
+@media not all {
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3B2418;
+}
+.page-content {
+    background-image: url("images/about_cover.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: change 10s infinite ease-in-out;
+}
+
+.page-content h2 {
+    margin: 0;
+}
+
+.page-content p {
+    margin: 20px 0 0;
+}
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #F1E7D4;
+    border-top: 2px solid #C9A86A;
+}
+.split-text,
+.split-media {
+    padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 48px);
+}
+.split-text { border-right: 2px solid #C9A86A; }
+.split-media { display: flex; align-items: center; justify-content: center; }
+.split-section h2 { text-align: left; }
+.split-section h2::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 3px;
+    margin-top: 14px;
+    background: #E3A33B;
+}
+.abt-hn {
+    width: auto;
+    max-width: 100%;
+    height: clamp(320px, 42vw, 480px);
+    display: block;
+    mix-blend-mode: multiply;
+}
+.about-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0 0 2rem;
+    font-family: "Fraunces", serif;
+}
+}
+
+body {
+    background-color: #F5E9D3;
+}
+
+#about .about-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    border: 2px solid #C9A86A;
+}
+#about .about-intro .split-media {
+    min-width: 0;
+    border-right: 2px solid #C9A86A;
+}
+#about .about-intro .split-text {
+    min-width: 0;
+    border: 0;
+    align-self: center;
+    text-align: left;
+}
+#about .about-intro img {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+}
+@media (max-width: 800px) {
+    #about .about-intro { grid-template-columns: minmax(0, 1fr); }
+    #about .about-intro .split-media {
+        border-right: 0;
+        border-bottom: 2px solid #C9A86A;
+    }
+}
+
+.about-habinatin h4 {
+    font-family: "Inter", serif;
+    color: #6d1a24;
+    font-size: 1.3rem;
+    margin: 1.8rem 0 0.6rem;
+}
+
+#about .about-habinatin > .about-list > h4 {
+    font-family: "Fraunces", serif;
+}
+
+.about-habinatin .about-tagline {
+    text-align: center;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #6d1a24;
+    margin-top: 2rem;
+}
+#about .split-text > h3 {
+  text-align: center;
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+}
+
+#about .about-habinatin .about-list p {
+        font-size: 1.05rem;
+        }
